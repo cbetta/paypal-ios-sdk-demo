@@ -1,0 +1,122 @@
+<?xml version='1.0'?>
+<signatures version='1.0'>
+<constant type='@' declared_type='NSString*' name='PayPalEnvironmentNoNetwork' const='true'/>
+<constant type='@' declared_type='NSString*' name='PayPalEnvironmentProduction' const='true'/>
+<constant type='@' declared_type='NSString*' name='PayPalEnvironmentSandbox' const='true'/>
+<constant type='@' declared_type='NSString*' name='PayPalTransactionDidSucceedNotification' const='true'/>
+<class name='NSObject'>
+<method selector='payPalPaymentDidCancel'>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='payPalPaymentDidComplete:'>
+<arg index='0' type='@' declared_type='PayPalPayment*' name='completedPayment'/>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='PayPalPayment'>
+<method selector='amount'>
+<retval type='@' declared_type='NSDecimalNumber*'/>
+</method>
+<method selector='confirmation'>
+<retval type='@' declared_type='NSDictionary*'/>
+</method>
+<method selector='currencyCode'>
+<retval type='@' declared_type='NSString*'/>
+</method>
+<method selector='localizedAmountForDisplay'>
+<retval type='@' declared_type='NSString*'/>
+</method>
+<method class_method='true' selector='paymentWithAmount:currencyCode:shortDescription:'>
+<arg index='0' type='@' declared_type='NSDecimalNumber*' name='amount'/>
+<arg index='1' type='@' declared_type='NSString*' name='currencyCode'/>
+<arg index='2' type='@' declared_type='NSString*' name='shortDescription'/>
+<retval type='@' declared_type='PayPalPayment*'/>
+</method>
+<method selector='processable'>
+<retval type='B' declared_type='BOOL'/>
+</method>
+<method selector='setAmount:'>
+<arg index='0' type='@' declared_type='NSDecimalNumber*' name='amount'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setCurrencyCode:'>
+<arg index='0' type='@' declared_type='NSString*' name='currencyCode'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setShortDescription:'>
+<arg index='0' type='@' declared_type='NSString*' name='shortDescription'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='shortDescription'>
+<retval type='@' declared_type='NSString*'/>
+</method>
+</class>
+<class name='PayPalPaymentViewController'>
+<method selector='defaultUserEmail'>
+<retval type='@' declared_type='NSString*'/>
+</method>
+<method selector='defaultUserPhoneCountryCode'>
+<retval type='@' declared_type='NSString*'/>
+</method>
+<method selector='defaultUserPhoneNumber'>
+<retval type='@' declared_type='NSString*'/>
+</method>
+<method class_method='true' selector='environment'>
+<retval type='@' declared_type='NSString*'/>
+</method>
+<method selector='hideCreditCardButton'>
+<retval type='B' declared_type='BOOL'/>
+</method>
+<method selector='initWithClientId:receiverEmail:payerId:payment:delegate:'>
+<arg index='0' type='@' declared_type='NSString*' name='clientId'/>
+<arg index='1' type='@' declared_type='NSString*' name='payPalAccountEmailAddress'/>
+<arg index='2' type='@' declared_type='NSString*' name='payerId'/>
+<arg index='3' type='@' declared_type='PayPalPayment*' name='payment'/>
+<arg index='4' type='@' declared_type='id' name='delegate'/>
+<retval type='@' declared_type='id'/>
+</method>
+<method class_method='true' selector='libraryVersion'>
+<retval type='@' declared_type='NSString*'/>
+</method>
+<method selector='paymentDelegate'>
+<retval type='@' declared_type='id'/>
+</method>
+<method class_method='true' selector='prepareForPaymentUsingClientId:'>
+<arg index='0' type='@' declared_type='NSString*' name='clientId'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setDefaultUserEmail:'>
+<arg index='0' type='@' declared_type='NSString*' name='defaultUserEmail'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setDefaultUserPhoneCountryCode:'>
+<arg index='0' type='@' declared_type='NSString*' name='defaultUserPhoneCountryCode'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setDefaultUserPhoneNumber:'>
+<arg index='0' type='@' declared_type='NSString*' name='defaultUserPhoneNumber'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method class_method='true' selector='setEnvironment:'>
+<arg index='0' type='@' declared_type='NSString*' name='environment'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setHideCreditCardButton:'>
+<arg index='0' type='B' declared_type='BOOL' name='hideCreditCardButton'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setPaymentDelegate:'>
+<arg index='0' type='@' declared_type='id' name='paymentDelegate'/>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<informal_protocol name='PayPalPaymentDelegate'>
+<method selector='payPalPaymentDidCancel' type='v8@0:4'>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='payPalPaymentDidComplete:' type='v12@0:4@8'>
+<arg index='0' type='@' declared_type='PayPalPayment*' name='completedPayment'/>
+<retval type='v' declared_type='void'/>
+</method>
+</informal_protocol>
+</signatures>
